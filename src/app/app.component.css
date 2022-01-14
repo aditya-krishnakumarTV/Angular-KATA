@@ -1,0 +1,11 @@
+.white-text{
+    color : white
+}
+
+input.ng-invalid.ng-touched {
+    border-color: red;
+}
+
+.help-block {
+    color: red;
+}
