@@ -17,7 +17,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent implements OnInit {
   users: Array<User> = [];
-  signUpForm: FormGroup;
+
 
   @ViewChild('tableName') nameInput: ElementRef;
 
@@ -48,12 +48,6 @@ export class AppComponent implements OnInit {
         console.log('Completed!');
       }
     );
-
-    this.signUpForm = new FormGroup({
-      rusername: new FormControl(null, Validators.required),
-      rphone: new FormControl(null, Validators.required),
-      hobbies: new FormArray([]),
-    });
   }
 
   constructor(private http: HttpClient) {}
@@ -85,16 +79,6 @@ export class AppComponent implements OnInit {
     console.log(form);
   }
 
-  onSubmitR() {
-    console.log(this.signUpForm);
-  }
-
-  onAdd() {
-    const control = new FormControl(null, Validators.required);
-    (<FormArray>this.signUpForm.get('hobbies')).push(control);
-  }
-
-  get controls() {
-    return (this.signUpForm.get('hobbies') as FormArray).controls;
-  }
 }
+
+// jquery

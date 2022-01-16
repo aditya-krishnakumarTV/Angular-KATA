@@ -59,52 +59,5 @@
     </tbody>
   </table>
   <hr />
-
-  <span>Reactive Forms</span>
-
-  <form (ngSubmit)="onSubmitR()" [formGroup]="signUpForm">
-    Enter Name:<input
-      class="form-control"
-      type="text"
-      formControlName="rusername"
-    />
-    <span
-      class="help-block"
-      *ngIf="
-        signUpForm.get('rusername').invalid &&
-        signUpForm.get('rusername').touched
-      "
-    >
-      Please enter name!
-    </span>
-    <br />
-    Enter Number:<input
-      class="form-control"
-      type="number"
-      formControlName="rphone"
-    />
-    <span
-      class="help-block"
-      *ngIf="
-        signUpForm.get('rphone').invalid && signUpForm.get('rphone').touched
-      "
-    >
-      Please enter number!
-    </span>
-    <br />
-    <div formArrayName="hobbies">
-      <h3>Your Hobbies</h3>
-      <button class="btn btn-default" type="button" (click)="onAdd()">
-        Add Your Hobbies
-      </button>
-      <div
-        class="form-group"
-        *ngFor="let hobbyControl of controls; let i = index"
-      >
-        <input type="text" class="form-control" [formControlName]="i" />
-      </div>
-    </div>
-    <br />
-    <button class="btn btn-primary" type="submit">Submit</button>
-  </form>
+  
 </div>
