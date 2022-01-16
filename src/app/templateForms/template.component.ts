@@ -1,4 +1,4 @@
-import { User } from './../modal';
+import { User } from '../shared/modal';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 

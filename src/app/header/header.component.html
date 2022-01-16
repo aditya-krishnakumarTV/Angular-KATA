@@ -1,16 +1,28 @@
 <div class="container">
   <ul class="nav nav-tabs">
-    <li class="nav-item" routerLinkActive="active">
-      <a class="nav-link" routerLink="">Udemy Practice</a>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        routerLink=""
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Udemy Practice</a
+      >
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink="/dummy">Dummy</a>
+      <a class="nav-link" routerLinkActive="active" routerLink="/dummy"
+        >Dummy</a
+      >
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink="/reactiveForm">Reactive Form</a>
+      <a class="nav-link" routerLinkActive="active" routerLink="/reactiveForm"
+        >Reactive Form</a
+      >
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink="/templateForm">Template-driven Form</a>
+      <a class="nav-link" routerLinkActive="active" routerLink="/templateForm"
+        >Template-driven Form</a
+      >
     </li>
   </ul>
 </div>

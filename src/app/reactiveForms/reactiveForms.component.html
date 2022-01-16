@@ -1,6 +1,4 @@
 <div class="container">
-  <span>Reactive Forms</span>
-
   <form (ngSubmit)="onSubmitR()" [formGroup]="signUpForm">
     Enter Name:<input
       class="form-control"
@@ -46,4 +44,28 @@
     <br />
     <button class="btn btn-primary" type="submit">Submit</button>
   </form>
+
+  <br /><br />
+  <button class="btn btn-primary" (click)="addNewUser()">Add</button>
+  <br /><br />
+  <button class="btn btn-danger" (click)="deleteUser()">Delete</button>
+  <br /><br />
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th>Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>
+          {{ user.name | shorten: 6 }}
+        </td>
+        <td>
+          {{ user.phone }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { DummyComponent } from './dummy/dummy.component';
 
-import { ShortenPipe } from './shorten.pipe';
+import { ShortenPipe } from './shared/shorten.pipe';
 
 @NgModule({
   declarations: [
