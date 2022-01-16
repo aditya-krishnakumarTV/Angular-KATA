@@ -1,6 +1,6 @@
 import { Subscription, Observable } from 'rxjs';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-dummy',
@@ -39,7 +39,7 @@ export class DummyComponent implements OnInit, OnDestroy {
     );
   }
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private route: ActivatedRoute) {}
 
   onReactive() {
     this.router.navigate(['/reactiveForm']);
@@ -47,6 +47,10 @@ export class DummyComponent implements OnInit, OnDestroy {
 
   onTemplate() {
     this.router.navigate(['/templateForm']);
+  }
+
+  onBreak() {
+    this.router.navigate(['reactiveForm'], { relativeTo: this.route });
   }
 
   ngOnDestroy(): void {
