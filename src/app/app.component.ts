@@ -1,13 +1,6 @@
-import { User } from './modal';
-import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import {
-  FormArray,
-  FormControl,
-  FormGroup,
-  NgForm,
-  Validators,
-} from '@angular/forms';
+
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -16,9 +9,6 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  
-
-  @ViewChild('tableName') nameInput: ElementRef;
 
   ngOnInit() {
     const testObservable = new Observable((observer) => {
@@ -51,22 +41,14 @@ export class AppComponent implements OnInit {
 
   constructor(private http: HttpClient) {}
 
-  // nameInput: HTMLInputElement,
-  // addNewUser(numberInput: HTMLInputElement) {
-  //   this.users.push(
-  //     new User(this.nameInput.nativeElement.value, numberInput.valueAsNumber)
-  //   );
-  // }
-  
-    // this.http
-    //   .post(
-    //     'https://my-test-backend-9ec30-default-rtdb.asia-southeast1.firebasedatabase.app/posts.json',
-    //     form.value.username
-    //   )
-    //   .subscribe((data) => {
-    //     console.log(data);
-    //   });
-
+  // this.http
+  //   .post(
+  //     'https://my-test-backend-9ec30-default-rtdb.asia-southeast1.firebasedatabase.app/posts.json',
+  //     form.value.username
+  //   )
+  //   .subscribe((data) => {
+  //     console.log(data);
+  //   });
 }
 
 // jquery

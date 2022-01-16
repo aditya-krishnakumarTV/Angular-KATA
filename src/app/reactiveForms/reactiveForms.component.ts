@@ -25,7 +25,7 @@ export class ReactiveFormComponent implements OnInit {
     const control = new FormControl(null, Validators.required);
     (<FormArray>this.signUpForm.get('hobbies')).push(control);
   }
-  
+
   get controls() {
     return (this.signUpForm.get('hobbies') as FormArray).controls;
   }

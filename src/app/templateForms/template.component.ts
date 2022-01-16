@@ -1,5 +1,5 @@
 import { User } from './../modal';
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -9,6 +9,8 @@ import { NgForm } from '@angular/forms';
 })
 export class TemplateFormComponent {
   users: Array<User> = [];
+
+  @ViewChild('tableName') nameInput: ElementRef;
 
   addNewUser(form: NgForm) {
     this.users.push(new User(form.value.username, form.value.phone));
@@ -22,4 +24,11 @@ export class TemplateFormComponent {
   deleteUser() {
     this.users.pop();
   }
+
+  // nameInput: HTMLInputElement,
+  // addNewUser(numberInput: HTMLInputElement) {
+  //   this.users.push(
+  //     new User(this.nameInput.nativeElement.value, numberInput.valueAsNumber)
+  //   );
+  // }
 }
