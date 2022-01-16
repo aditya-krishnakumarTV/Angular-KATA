@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
+import { TemplateFormComponent } from './templateForms/template.component';
 import { ReactiveFormComponent } from './reactiveForms/reactiveForms.component';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -17,16 +18,17 @@ import { ShortenPipe } from './shorten.pipe';
     HeaderComponent,
     DummyComponent,
     ReactiveFormComponent,
-    ShortenPipe
+    TemplateFormComponent,
+    ShortenPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

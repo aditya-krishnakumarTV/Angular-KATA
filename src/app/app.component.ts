@@ -16,8 +16,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  users: Array<User> = [];
-
+  
 
   @ViewChild('tableName') nameInput: ElementRef;
 
@@ -58,8 +57,7 @@ export class AppComponent implements OnInit {
   //     new User(this.nameInput.nativeElement.value, numberInput.valueAsNumber)
   //   );
   // }
-  addNewUser(form: NgForm) {
-    this.users.push(new User(form.value.username, form.value.phone));
+  
     // this.http
     //   .post(
     //     'https://my-test-backend-9ec30-default-rtdb.asia-southeast1.firebasedatabase.app/posts.json',
@@ -68,16 +66,6 @@ export class AppComponent implements OnInit {
     //   .subscribe((data) => {
     //     console.log(data);
     //   });
-  }
-
-  deleteUser() {
-    this.users.pop();
-  }
-
-  onSubmit(form: NgForm) {
-    console.log('submitted!');
-    console.log(form);
-  }
 
 }
 
