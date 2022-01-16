@@ -1,13 +1,14 @@
 import { Subscription, Observable } from 'rxjs';
-import { Component , OnDestroy, OnInit} from "@angular/core";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
-    selector: 'app-dummy',
-    templateUrl : './dummy.component.html',
-    styleUrls : ['./dummy.component.css']
+  selector: 'app-dummy',
+  templateUrl: './dummy.component.html',
+  styleUrls: ['./dummy.component.css'],
 })
-export class DummyComponent implements OnInit, OnDestroy{
-    testObsSub: Subscription;
+export class DummyComponent implements OnInit, OnDestroy {
+  testObsSub: Subscription;
 
   ngOnInit() {
     const testObservable = new Observable((observer) => {
@@ -36,6 +37,16 @@ export class DummyComponent implements OnInit, OnDestroy{
         console.log('Completed!');
       }
     );
+  }
+
+  constructor(private router: Router) {}
+
+  onReactive() {
+    this.router.navigate(['/reactiveForm']);
+  }
+
+  onTemplate() {
+    this.router.navigate(['/templateForm']);
   }
 
   ngOnDestroy(): void {
